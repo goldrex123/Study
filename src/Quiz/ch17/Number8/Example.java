@@ -16,14 +16,14 @@ public class Example {
         );
 
         Map<String, List<Member>> collect = list.stream()
-                .collect(Collectors.groupingBy(s -> s.getJob()));
+                .collect(Collectors.groupingBy(Member::getJob));
 
         System.out.println("[개발자]");
-        collect.get("개발자").stream().forEach(x -> System.out.println(x));
+        collect.get("개발자").forEach(System.out::println);
 
         System.out.println();
 
         System.out.println("[디자이너]");
-        collect.get("디자이너").stream().forEach(x -> System.out.println(x));
+        collect.get("디자이너").forEach(System.out::println);
     }
 }
